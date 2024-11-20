@@ -30,8 +30,9 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = MyClient(intents=intents)
-keep_alive()
 try:
-    client.run(os.environ['TOKEN'])
+    TOKEN = os.getenv("DISCORD_TOKEN")
+    keep_alive()
+    client.run(TOKEN)
 except:
     os.system("kill")
