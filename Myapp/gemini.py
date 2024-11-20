@@ -8,7 +8,9 @@ womenSetText = "小学生"
 
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 genai.configure(api_key=GOOGLE_API_KEY)
-gemini_pro = genai.GenerativeModel("gemini-1.5-flash")
+gemini_pro = genai.GenerativeModel(model_name="gemini-pro-vision",
+                              generation_config=generation_config,
+                              safety_settings=safety_settings)
 
 
 def geminiCreateText(inputText):
